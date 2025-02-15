@@ -1,0 +1,322 @@
+:root {
+    --primary-color: #ff69b4;
+    --secondary-color: #ff1493;
+    --background-color: #ffe6f2;
+    --text-color: #ff1493;
+    --box-shadow: 0 4px 15px rgba(255, 105, 180, 0.3);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Comic Sans MS', cursive;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    min-height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+
+.sparkles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    position: relative;
+    z-index: 2;
+}
+
+header {
+    text-align: center;
+    padding: 40px 0;
+    animation: bounce 2s infinite;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 2px 2px 4px rgba(255, 105, 180, 0.3);
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #ff69b4;
+}
+
+.generator-box {
+    background: white;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    margin: 20px 0;
+    border: 3px solid #ff69b4;
+    position: relative;
+    overflow: hidden;
+}
+
+.generator-box::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255, 105, 180, 0.1), transparent);
+    animation: shine 3s infinite;
+}
+
+.pickup-display {
+    background: #fff5f8;
+    padding: 20px;
+    border-radius: 15px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 1.3rem;
+    border: 2px dashed #ff69b4;
+}
+
+.buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.rainbow-btn {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-family: 'Comic Sans MS', cursive;
+    font-size: 1.1rem;
+    background: linear-gradient(45deg, #ff69b4, #ff1493, #ff69b4);
+    color: white;
+    transition: transform 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.rainbow-btn:hover {
+    transform: scale(1.05);
+    animation: rainbow 3s infinite;
+}
+
+.rainbow-btn span {
+    position: relative;
+    z-index: 1;
+}
+
+.cringe-meter {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.meter-bar {
+    height: 20px;
+    background: #ffe6f2;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+    border: 2px solid #ff69b4;
+}
+
+.meter-fill {
+    height: 100%;
+    background: linear-gradient(90deg, #ff69b4, #ff1493);
+    width: 0%;
+    transition: width 0.5s ease;
+}
+
+.category-selector {
+    margin: 30px 0;
+    text-align: center;
+}
+
+.category-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 10px;
+    margin-top: 15px;
+}
+
+.category-buttons button {
+    padding: 10px;
+    border: 2px solid #ff69b4;
+    border-radius: 15px;
+    background: white;
+    color: #ff69b4;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-buttons button.active {
+    background: #ff69b4;
+    color: white;
+}
+
+.cringe-control {
+    margin-top: 30px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 15px;
+    border: 2px dashed var(--primary-color);
+}
+
+.slider-container {
+    margin: 20px 0;
+    padding: 0 10px;
+}
+
+.cringe-slider {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 20px;
+    background: linear-gradient(to right, #ff9ed2, #ff1493);
+    border-radius: 10px;
+    outline: none;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+}
+
+.cringe-slider:hover {
+    opacity: 1;
+}
+
+.cringe-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 3px solid #ff1493;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+    transition: transform 0.2s;
+}
+
+.cringe-slider::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+}
+
+.cringe-slider::-moz-range-thumb {
+    width: 30px;
+    height: 30px;
+    background: white;
+    border: 3px solid #ff1493;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 10px rgba(255, 20, 147, 0.3);
+    transition: transform 0.2s;
+}
+
+.slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    color: var(--text-color);
+    font-size: 0.9rem;
+}
+
+.current-level {
+    margin-top: 15px;
+    font-size: 1.2rem;
+    color: var(--text-color);
+    font-weight: bold;
+}
+
+#cringe-value {
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    margin-top: 40px;
+}
+
+.disclaimer {
+    font-size: 0.8rem;
+    color: #ff69b4;
+    margin-top: 10px;
+}
+
+/* Animations */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rainbow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+@keyframes shine {
+    0% { transform: translateX(-100%); }
+    100% { transform: translateX(100%); }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    .buttons {
+        flex-direction: column;
+    }
+    
+    .pickup-display {
+        font-size: 1.1rem;
+    }
+}
+
+/* Add floating hearts */
+.heart {
+    position: fixed;
+    font-size: 20px;
+    animation: float 6s linear infinite;
+    z-index: 0;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(-100vh) rotate(360deg);
+        opacity: 0;
+    }
+}
